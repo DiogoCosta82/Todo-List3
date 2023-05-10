@@ -1,10 +1,13 @@
-function Content(props) {
+function TaskToDo(props) {
   return (
-    <div id="contentList">
-      <p className="idTask"></p>
-      {props.task}
+    <div id="task-container">
+      <h4>{props.content}</h4>
+      {props.state === "Terminé" ? (
+        <p>{props.state}</p>
+      ) : (
+        <button onClick={props.action}>{props.state}</button>
+      )}
     </div>
   );
 }
-
-export default Content;
+export default TaskToDo;
